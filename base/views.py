@@ -35,5 +35,5 @@ def index(request):
     for i in range(len(balance)):
         balance[i] = balance[i].replace(',', '')
         balance[i] = int(balance[i])
-
-    return render(request, 'base/base.html', ads=ad, balances=balance)
+    context={"ads": ad, "balances": balance}
+    return render(request, 'base/base.html', context)
